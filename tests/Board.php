@@ -35,5 +35,33 @@
             $this->assertTrue($board->isSunk('A', 0));
         }
 
+        /**
+         * @test
+         */
+        public function getNeighboringCells() {
+            $board = new Board( array(
+                'A' => array(0, 0, 0),
+                'B' => array(1, 0, 2),
+                'C' => array(0, 3, 0),
+            ));
+
+            // Test a cell in the middle
+            $gotNeighbors = $board->getNeighboringCells('B', 1);
+            $expectedNeighbors = array( 
+                array('A', 1, 0),
+                array('B', 0, 1),
+                array('B', 2, 2),
+                array('C', 1, 3),
+            );
+            $this->assertEquals($gotNeighbors, $expectedNeighbors);
+
+            // Test a cell on the edge
+            $gotNeighbors = $board->getNeighboringCells('C', 2);
+            $expectedNeighbors = array( 
+                array('B', 2, 2),
+                array('C', 1, 3),
+            );
+            $this->assertEquals($gotNeighbors, $expectedNeighbors);
+        }
     }
 ?>
