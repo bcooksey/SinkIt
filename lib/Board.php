@@ -37,7 +37,7 @@
 
         /* Fetch the neighbors of a given cell
          * Params: Row and column of a cell
-         * Return: Array of triples [ [row, column, status], ...], one per neighbor
+         * Return: Array of touples [ [row, column], ...], one per neighbor
          */ 
         public function getNeighboringCells($row, $col) {
             $neighbors = array();
@@ -49,37 +49,25 @@
             // Push on top neighbor
             $neighborRow = prev($rows);
             if ($neighborRow) {
-                array_push(
-                    $neighbors,
-                    array($neighborRow, $col, $this->grid[$neighborRow][$col] )
-                );
+                array_push( $neighbors, array($neighborRow, $col) );
             }
 
             $neighborRow = next($rows); // Pointer back to $row
 
             // Push on left neighbor
             if ($col - 1 >= 0) {
-                array_push(
-                    $neighbors,
-                    array($neighborRow, $col-1, $this->grid[$neighborRow][$col-1])
-                );
+                array_push( $neighbors, array($neighborRow, $col-1) );
             } 
 
             //Push on right neighbor
             if ($col + 1 <= $this->getWidth()) {
-                array_push(
-                    $neighbors,
-                    array($neighborRow, $col+1, $this->grid[$neighborRow][$col+1])
-                );
+                array_push( $neighbors, array($neighborRow, $col+1) );
             }
 
             // Push on bottom neighbor 
             $neighborRow = next($rows);
             if ($neighborRow) {
-                array_push(
-                    $neighbors,
-                    array($neighborRow, $col, $this->grid[$neighborRow][$col] )
-                );
+                array_push( $neighbors, array($neighborRow, $col) );
             }
 
             return $neighbors;

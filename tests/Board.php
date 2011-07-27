@@ -48,18 +48,18 @@
             // Test a cell in the middle
             $gotNeighbors = $board->getNeighboringCells('B', 1);
             $expectedNeighbors = array( 
-                array('A', 1, 0),
-                array('B', 0, 1),
-                array('B', 2, 2),
-                array('C', 1, 3),
+                array('A', 1),
+                array('B', 0),
+                array('B', 2),
+                array('C', 1),
             );
             $this->assertEquals($gotNeighbors, $expectedNeighbors);
 
             // Test a cell on the edge
             $gotNeighbors = $board->getNeighboringCells('C', 2);
             $expectedNeighbors = array( 
-                array('B', 2, 2),
-                array('C', 1, 3),
+                array('B', 2),
+                array('C', 1),
             );
             $this->assertEquals($gotNeighbors, $expectedNeighbors);
         }

@@ -25,18 +25,10 @@
                     // Foreach hit, see if any of the neighbors are unknown.
                     // If one is found, mark it as the next shot
                     if ($board->isHit($row, $column)) {
-                        $nextShot = null;
-                        array_walk(
-                            $board->getNeighboringCells($row, $column),
-                            function($triplet, $index, $shot) {
-                                if (!$shot && $triplet[2] === 0) {
-                                    $shot = array($triplet[0], $triplet[1]);
-                                }
-                            },
-                            &$nextShot
-                        );
-                        if ($nextShot) {
-                            return $nextShot;
+                        foreach ($board->getNeighboringCells($row, $column) as $neighbor) {
+                            if ($board->isUnknown($neighbor[0], $neighbor[1])) {
+                                return $neighbor;
+                            }
                         }
                     }
                 }
