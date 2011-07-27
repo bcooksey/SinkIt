@@ -34,6 +34,16 @@
             $shot = $this->farragut->chooseShot($this->board);
             $this->assertEquals(array('B', 1), $shot);
         }
+
+        /**
+         * @test
+         */
+        public function chooseShotWithHit() {
+            // With a hit on the board, the next shot should be adjacent to the hit
+            $this->board->setCellStatus('B', 2, 'hit');
+            $shot = $this->farragut->chooseShot($this->board);
+            $this->assertEquals(array('A', 2), $shot);
+        }
     }
 
 ?>

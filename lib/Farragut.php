@@ -5,7 +5,43 @@
          * See the private horizontalShot for details on return value and exceptions
          */
         public function chooseShot($board) {
-            return $this->horizontalShot($board); 
+            $killShot = $this->killShot($board);
+            return $killShot !== null ? $killShot : $this->horizontalShot($board); 
+        }
+
+        /* Walk the board, looking for any ships that have been hit, but not
+         * sunk, and try to hit them again.
+         * Params: A Board object
+         * Return: If a hit is found, then the coords of the next shot, else
+         * null.
+         */
+        private function killShot($board) {
+            $rows = $board->getRows();
+            $maxColumn = $board->getWidth();
+            $column = 0;
+            for ($row = current($rows); $row !== false; $row = next($rows)) {
+                for ($column = 0; $column <= $maxColumn; $column++) {
+
+                    // Foreach hit, see if any of the neighbors are unknown.
+                    // If one is found, mark it as the next shot
+                    if ($board->isHit($row, $column)) {
+                        $nextShot = null;
+                        array_walk(
+                            $board->getNeighboringCells($row, $column),
+                            function($triplet, $index, $shot) {
+                                if (!$shot && $triplet[2] === 0) {
+                                    $shot = array($triplet[0], $triplet[1]);
+                                }
+                            },
+                            &$nextShot
+                        );
+                        if ($nextShot) {
+                            return $nextShot;
+                        }
+                    }
+                }
+            }
+            return null;
         }
 
         /* Scans the board row by row, taking shots in every other column.
