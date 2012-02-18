@@ -1,0 +1,29 @@
+header {
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+header #sub-heading {
+    font-size: 24px;
+}
+
+.intro-page {
+    width: 100%;
+    text-align: center;
+}
+
+.intro-page div {
+    margin-bottom: 20px; 
+}
+
+.intro-page #new-game {
+    border: 2px solid grey;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: lightgrey;
+    text-decoration: none;
+    font-color: black;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="{{ asset('bundles/sinkit/css/sink_it.css') }}" type="text/css" media="all" />
+        <title>{% block title %}Sink It{% endblock %}</title>
+    </head>
+    <body>
+        <header>
+            Sink It
+            <div id="sub-heading">A new take on the classic Battle Ship</div>
+        </header>
+        <div id="wrapper">
+            {% if app.session.flash('notice') %}
+                <div class="flash-message">
+                    <em>Notice</em>: {{ app.session.flash('notice') }}
+                </div>
+            {% endif %}
+
+            {% block content_header %}
+                <nav id="nav-menu">
+                    <ul>
+                        {% block content_header_more %}
+                            <li><a href="{{ path('_welcome') }}">Home</a></li>
+                        {% endblock %}
+                    </ul>
+                </nav>
+            {% endblock %}
+
+            <div id="content" class="content">
+                {% block content %}
+                {% endblock %}
+            </div> <!-- End Content -->
+        </div> <!-- End Wrapper -->
+    </body>
+</html>
