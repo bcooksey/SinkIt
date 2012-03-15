@@ -1,7 +1,6 @@
-_sinkit:
-    pattern: /
-    resource: "@SinkItBundle/Controller/WelcomeController.php"
-    type:     annotation
+# _sinkit:
+#     resource: "@SinkItGameBundle/Resources/config/routing_dev.yml"
+#     prefix:   /
 
 _welcome:
     pattern:  /welcome

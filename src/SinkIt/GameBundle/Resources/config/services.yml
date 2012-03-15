@@ -1,0 +1,7 @@
+parameters:
+#    sink_it_game.example.class: SinkIt\GameBundle\Example
+
+services:
+#    sink_it_game.example:
+#        class: %sink_it_game.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
