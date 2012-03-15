@@ -1,1 +1,13 @@
-Hello {{ name }}!
+{% extends '::base.html.twig' %}
+
+{% block body %}
+   <div class="intro-page">
+       <span id="new-game" onclick="newGame()">Start a new game</span>
+   </div>
+{% endblock %}
+
+{% block javascripts %}
+   <script type="text/javascript">
+       function newGame() { console.debug('Make a new game'); }
+   </script>
+{% endblock %}
