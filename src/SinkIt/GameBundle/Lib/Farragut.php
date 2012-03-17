@@ -1,4 +1,6 @@
 <?php
+    namespace SinkIt\GameBundle\Lib;
+
     class Farragut {
 
         /* Selects the next shot, given the current $board.

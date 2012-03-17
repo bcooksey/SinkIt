@@ -1,8 +1,11 @@
 <?php
-    require_once 'lib/Farragut.php';
-    require_once 'lib/Board.php';
 
-    class FarragutTest extends PHPUnit_Framework_TestCase {
+    namespace SinkIt\GameBundle\Tests\Lib;
+
+    use SinkIt\GameBundle\Lib\Farragut;
+    use SinkIt\GameBundle\Lib\Board;
+
+    class FarragutTest extends \PHPUnit_Framework_TestCase {
 
         protected $farragut;
         protected $board;

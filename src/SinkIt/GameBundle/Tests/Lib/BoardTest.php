@@ -2,9 +2,9 @@
 
     namespace SinkIt\GameBundle\Tests\Lib;
 
-    use SinkIt\GameBundle\Lib;
+    use SinkIt\GameBundle\Lib\Board;
 
-    class BoardTest extends PHPUnit_Framework_TestCase {
+    class BoardTest extends \PHPUnit_Framework_TestCase {
     
         /**
          * @test
