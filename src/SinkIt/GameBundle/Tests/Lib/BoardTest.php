@@ -1,6 +1,8 @@
 <?php
 
-    namespace SinkIt\GameBundle\Lib;
+    namespace SinkIt\GameBundle\Tests\Lib;
+
+    use SinkIt\GameBundle\Lib;
 
     class BoardTest extends PHPUnit_Framework_TestCase {
     

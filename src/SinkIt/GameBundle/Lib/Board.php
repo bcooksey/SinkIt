@@ -1,4 +1,6 @@
 <?php
+    namespace SinkIt\GameBundle\Lib;
+
     class Board {
 
         protected $grid;
