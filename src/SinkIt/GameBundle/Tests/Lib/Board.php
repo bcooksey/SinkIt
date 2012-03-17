@@ -1,5 +1,6 @@
 <?php
-    require_once 'lib/Board.php';
+
+    namespace SinkIt\GameBundle\Lib;
 
     class BoardTest extends PHPUnit_Framework_TestCase {
     
