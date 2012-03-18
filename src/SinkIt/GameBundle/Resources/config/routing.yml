@@ -1,3 +1,7 @@
-SinkItGameBundle_homepage:
+homepage:
     pattern:  /
     defaults: { _controller: SinkItGameBundle:Default:index }
+
+create_game:
+    pattern: /game/create
+    defaults: { _controller: SinkItGameBundle:Game:create }

@@ -1,7 +1,3 @@
-# _sinkit:
-#     resource: "@SinkItGameBundle/Resources/config/routing_dev.yml"
-#     prefix:   /
-
 _welcome:
     pattern:  /welcome
     defaults: { _controller: AcmeDemoBundle:Welcome:index }
