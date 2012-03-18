@@ -1,8 +1,27 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
+   <style type="text/css">
+        .intro-page {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .intro-page div {
+            margin-bottom: 20px; 
+        }
+        
+        .intro-page #new-game {
+            border: 2px solid grey;
+            border-radius: 25px;
+            padding: 10px;
+            background-color: lightgrey;
+            text-decoration: none;
+            font-color: black;
+        }
+   </style>
    <div class="intro-page">
-       <span id="new-game" onclick="newGame()">Start a new game</span>
+       <span id="new-game" class="clickable" onclick="newGame()">Start a new game</span>
    </div>
 {% endblock %}
 
